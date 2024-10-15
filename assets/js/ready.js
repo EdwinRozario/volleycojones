@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	const today = new Date().toISOString().split('T')[0].replaceAll('-', '');
+	const table = document.getElementById('next');
 	let nextDay = null;
 	const schedule = new Map([
 		[20241017, { time: '17 Oct, 6:50 pm', team: 'Team Lang', court: 2, duty: 'NA' }],
@@ -14,7 +15,19 @@ $(document).ready(function(){
 	]);
 
 	schedule.keys().forEach(key => {
-		if (today < key && nextDay == null) { nextDay = key; }
+		if (today < key) {
+			if (nextDay == null) {
+				nextDay = key;
+			} else {
+				var game = schedule.get(key);
+				var row = table.insertRow(-1);
+				var time = row.insertCell(0);
+				var team = row.insertCell(1);
+
+				time.innerHTML = game.time;
+				team.innerHTML = game.team;
+			}
+		}
 	});
 
 	if (nextDay != null) {
