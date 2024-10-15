@@ -15,7 +15,7 @@ $(document).ready(function(){
 	]);
 
 	schedule.keys().forEach(key => {
-		if (today < key) {
+		if (today <= key) {
 			if (nextDay == null) {
 				nextDay = key;
 			} else {
