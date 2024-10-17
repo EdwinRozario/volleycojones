@@ -3,6 +3,7 @@ $(document).ready(function(){
 	const table = document.getElementById('next');
 	let nextDay = null;
 	const schedule = new Map([
+		[20241010, { time: '10 Oct, 7:40 pm', team: 'Twenty Twenty', court: 3, duty: 'NA' }],
 		[20241017, { time: '17 Oct, 6:50 pm', team: 'Team Lang', court: 2, duty: 'NA' }],
 		[20241024, { time: '24 Oct, 6:00 pm', team: 'Kilbirnie Kreamers', court: 3, duty: 'NA' }],
 		[20241031, { time: '31 Oct, 6:50 pm', team: 'Amy & Co', court: 2, duty: '6:00 pm' }],
@@ -15,17 +16,23 @@ $(document).ready(function(){
 	]);
 
 	schedule.keys().forEach(key => {
+		var game = schedule.get(key);
+		var row = table.insertRow(-1);
+		row.setAttribute('id', key)
+		var time = row.insertCell(0);
+		var team = row.insertCell(1);
+
+		time.innerHTML = game.time;
+		team.innerHTML = game.team;
+	});
+
+	schedule.keys().forEach(key => {
 		if (today <= key) {
 			if (nextDay == null) {
 				nextDay = key;
-			} else {
-				var game = schedule.get(key);
-				var row = table.insertRow(-1);
-				var time = row.insertCell(0);
-				var team = row.insertCell(1);
 
-				time.innerHTML = game.time;
-				team.innerHTML = game.team;
+				var element = document.getElementById(key);
+				element.classList.add('next-game');
 			}
 		}
 	});

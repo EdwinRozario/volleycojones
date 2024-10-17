@@ -98,6 +98,15 @@ h4.page-title {
   margin-bottom: 20px;
 }
 
+
+/* Additions */
+
+.next-game {
+  background-color: #d2d7d9;
+}
+
+/* Additions */
+
 .text-primary {
   color: #1D62F0 !important;
 }
@@ -5072,7 +5081,7 @@ body {
 .card {
   border-radius: 0px;
   background-color: #ffffff;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
   -moz-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
   box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
