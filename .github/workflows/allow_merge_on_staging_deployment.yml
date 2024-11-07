@@ -15,9 +15,6 @@ jobs:
           echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
           echo "${{ contains(github.event.pull_request.labels.*.name, 'bug') }}"
           if [[ ${{ contains(github.event.pull_request.labels.*.name, 'bug') }} ]]; then
-            echo "Ready for merge"
-            exit 0
-          else
             echo "Cannot not merge before deploying to staging"
             exit 1
           fi
