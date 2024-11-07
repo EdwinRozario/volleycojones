@@ -3,7 +3,7 @@ name: Prevent Merge before deploying to staging
 
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [opened, labeled, unlabeled, synchronize]
 
 jobs:
   prevent_merge:
