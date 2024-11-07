@@ -1,0 +1,15 @@
+name: Prevent Merge before deploying to staging
+on:
+  pull_request:
+    types: [opened, reopened, edited, labeled, unlabeled]
+
+jobs:
+  do-not-merge:
+    if: ${{ !contains(github.event.*.labels.*.name, 'quilon') }}
+    name: Prevent Merging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for label
+        run: |
+          echo "Pull request is labeled as 'do not merge'"
+          exit 1
