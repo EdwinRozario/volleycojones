@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check for doc label
         run: |
-          echo ${{ github.event.pull_request.labels.*.name }}
+          echo ${{ toJSON(github.event.pull_request.labels.*.name) }}
           if [[ ${{ contains(github.event.pull_request.labels.*.name, 'documentation') }} ]]; then
             echo "Pull request ready for merge"
             exit 0
