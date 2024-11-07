@@ -6,13 +6,13 @@ on:
 
 jobs:
   prevent_merge:
-    if: 
     name: Prevent Merge
     runs-on: ubuntu-latest
     steps:
       - name: Check for doc label
         run: |
-          if [[ "${{ github.event.pull_request.labels.*.name }}" =~ "documentation"]]; then
+          has_documentation = ${{ contains(github.event.pull_request.labels.*.name, 'documentation') }}
+          if [[ has_documentation ]]; then
             exit 0
           else
             exit 1
