@@ -13,7 +13,7 @@ jobs:
         run: |
           DEPLOYED=${{ contains(github.event.pull_request.labels.*.name, 'documentation') }}
           echo $DEPLOYED
-          if [[ $DEPLOYED ]]; then
+          if [[ $DEPLOYED = true ]]; then
             exit 0
           else
             exit 1
