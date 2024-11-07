@@ -14,7 +14,7 @@ jobs:
         run: |
           echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
           echo "${{ contains(github.event.pull_request.labels.*.name, 'documentation') }}"
-          if [[ ${{ contains(github.event.pull_request.labels.*.name, 'documentation') }} ]]; then
+          if [[ false ]]; then
             echo "Ready for merge"
             exit 0
           else
