@@ -1,4 +1,4 @@
-name: Prevent Merge before deploying to staging
+name: Staging deployment check
 
 on:
   pull_request:
@@ -6,11 +6,10 @@ on:
 
 jobs:
   prevent_merge:
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'bug') }}
-    name: Prevent Merging
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'bug') }}
+    name: Prevent Merge
     runs-on: ubuntu-latest
     steps:
       - name: Check for doc label
         run: |
-          echo "Cannot not merge before deploying to staging"
           exit 1
