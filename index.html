@@ -23,6 +23,8 @@
 				<div class="content">
 					<div class="container-fluid">
 						<div class="row">
+
+							<!-- Time -->
 							<div class="col-md-3">
 								<div class="card card-stats card-warning">
 									<div class="card-body ">
@@ -43,6 +45,7 @@
 								</div>
 							</div>
 
+							<!-- Team -->
 							<div class="col-md-3">
 								<div class="card card-stats card-success">
 									<div class="card-body ">
@@ -63,6 +66,7 @@
 								</div>
 							</div>
 
+							<!-- Court -->
 							<div class="col-md-3">
 								<div class="card card-stats card-danger">
 									<div class="card-body">
@@ -83,6 +87,7 @@
 								</div>
 							</div>
 
+							<!-- Duty -->
 							<div class="col-md-3">
 								<div class="card card-stats card-primary">
 									<div class="card-body ">
@@ -103,19 +108,86 @@
 								</div>
 							</div>
 
-
+							<!-- Schedule table -->
 							<div class="card-body">
-								<strong>Schedule</strong>
-								<table id="next" class="table table-head-bg-default table-striped table-hover">
+								<div class="icon-big">
+									<strong>Schedule</strong>
+									<i class="la la-calendar"></i>
+								</div>
+
+								<table class="table table-head-bg-default table-hover">
 									<thead>
 										<tr>
 											<th scope="col">Time</th>
 											<th scope="col">Team</th>
 										</tr>
 									</thead>
-									<tbody></tbody>
+									<tbody id="schedule"></tbody>
 								</table>
 							</div>
+
+							<!-- Scoreboard table -->
+							<div class="card-body">
+								<div class="icon-big">
+									<strong>Score board</strong>
+									<i class="la la-trophy"></i>
+								</div>
+
+								<table id="scoreboard" class="table table-head-bg-default table-hover">
+									<thead>
+										<tr>
+											<th scope="col">Team</th>
+											<th scope="col">Score</th>
+											<th scope="col">Wins</th>
+											<th scope="col">Losses</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Team Lang</td>
+											<td>20.5</td>
+											<td>5</td>
+											<td>1</td>
+										</tr>
+
+										<tr>
+											<td>Twenty Twenty</td>
+											<td>17.5</td>
+											<td>4</td>
+											<td>2</td>
+										</tr>
+
+										<tr>
+											<td>Amy & Co</td>
+											<td>16</td>
+											<td>3</td>
+											<td>3</td>
+										</tr>
+
+										<tr>
+											<td>Spike the Stegosaurus</td>
+											<td>14.5</td>
+											<td>3</td>
+											<td>3</td>
+										</tr>
+
+										<tr>
+											<td>Kilbirnie Kreamers</td>
+											<td>10</td>
+											<td>2</td>
+											<td>4</td>
+										</tr>
+
+										<tr class='highlight'>
+											<td>Volley Cojones</td>
+											<td>6</td>
+											<td>1</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -125,6 +197,5 @@
 </body>
 <script src="assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<!-- <script src="assets/js/core/bootstrap.min.js"></script> -->
 <script src="assets/js/ready.js"></script>
 </html>
