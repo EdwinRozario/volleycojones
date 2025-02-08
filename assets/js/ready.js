@@ -5,16 +5,7 @@ $(document).ready(function(){
 });
 
 const schedule = new Map([
-	[20241010, { time: '10 Oct, 7:40 pm', team: 'Twenty Twenty', court: 3, duty: 'NA' }],
-	[20241017, { time: '17 Oct, 6:50 pm', team: 'Team Lang', court: 2, duty: 'NA' }],
-	[20241024, { time: '24 Oct, 6:00 pm', team: 'Kilbirnie Kreamers', court: 3, duty: 'NA' }],
-	[20241031, { time: '31 Oct, 6:50 pm', team: 'Amy & Co', court: 2, duty: '6:00 pm' }],
-	[20241107, { time: '07 Nov, 6:00 pm', team: 'Spike the Stegosaurus', court: 3, duty: 'NA' }],
-	[20241114, { time: '14 Nov, 7:40 pm', team: 'Twenty Twenty', court: 3, duty: 'NA' }],
-	[20241121, { time: '21 Nov, 6:50 pm', team: 'Team Lang', court: 2, duty: '6:00 pm' }],
-	[20241128, { time: '28 Nov, 6:00 pm', team: 'Kilbirnie Kreamers', court: 3, duty: 'NA' }],
-	[20241205, { time: '05 Dec, 6:50 pm', team: 'Amy & Co', court: 2, duty: 'NA' }],
-	[20241212, { time: '12 Dec, 6:00 pm', team: 'Spike the Stegosaurus', court: 3, duty: 'NA' }]
+	[20250113, { time: '13 Jan, 6:00 pm', team: 'Kilbernie Kreamers', court: 1, duty: '6:50 pm' }]
 ]);
 
 
