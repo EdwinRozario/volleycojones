@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 const schedule = new Map([
-	[20250113, { time: '13 Jan, 6:00 pm', team: 'Kilbernie Kreamers', court: 1, duty: '6:50 pm' }]
+	[20250213, { time: '13 Feb, 6:00 pm', team: 'Kilbernie Kreamers', court: 1, duty: '6:50 pm' }]
 ]);
 
 
