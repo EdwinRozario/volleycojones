@@ -5,7 +5,14 @@ $(document).ready(function(){
 });
 
 const schedule = new Map([
-	[20250213, { time: '13 Feb, 6:00 pm', team: 'Kilbernie Kreamers', court: 1, duty: '6:50 pm' }]
+	[
+		20250213, { time: '13 Feb, 6:00 pm', team: 'Kilbernie Kreamers', court: 1, duty: '6:50 pm' },
+		20250220, { time: '20 Feb, 6:00 pm', team: 'Spike the Stegosaurus', court: 1, duty: 'NA' },
+		20250227, { time: '27 Mar, 6:50 pm', team: 'Kilbirnie Kreamers', court: 1, duty: 'NA' },
+		20250306, { time: '06 Mar, 6:00 pm', team: 'Spatial Needs', court: 2, duty: 'NA' },
+		20250313, { time: '13 Mar, 8:30 pm', team: 'Twenty Twenty', court: 3, duty: 'NA' },
+		20250320, { time: '20 Mar, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }
+	]
 ]);
 
 
