@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	populateSchedule();
-
 	populateNextGame();
+	populateScores();
 });
 
 const schedule = new Map([
@@ -13,19 +13,57 @@ const schedule = new Map([
 	[20250320, { time: '20 Mar, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }]
 ]);
 
+const scores = [
+	{ team: 'Volley Cojones',        score: 4,   wins: 1, draws: 0, losses: 0 },
+	{ team: 'Kilbirnie Kreamers',    score: 5,   wins: 1, draws: 0, losses: 0 },
+	{ team: 'Kiss my Ace',           score: 3.5, wins: 1, draws: 0, losses: 0 },
+	{ team: 'Twenty Twenty',         score: 1,   wins: 0, draws: 0, losses: 1 },
+	{ team: 'Spike the Stegosaurus', score: 1,   wins: 0, draws: 0, losses: 1 },
+	{ team: 'Spatial Needs',         score: 0,   wins: 0, draws: 0, losses: 1 }
+];
 
-function populateSchedule(){
+function populateScores() {
+	const table = document.getElementById('scores');
+
+	sorted_score = scores.sort((a, b) => b.score - a.score);
+
+	sorted_score.forEach(score => {
+		var row = table.insertRow(-1);
+
+		var team = row.insertCell(0);
+		team.textContent = score.team;
+
+		var total_score = row.insertCell(1);
+		total_score.textContent = score.score;
+
+		var wins = row.insertCell(2);
+		wins.textContent = score.wins;
+
+		var draws = row.insertCell(3);
+		draws.textContent = score.draws;
+
+		var losses = row.insertCell(4);
+		losses.textContent = score.losses;
+
+		if (score.team == 'Volley Cojones') {
+			row.classList.add('highlight');
+		}
+	});
+}
+
+function populateSchedule() {
 	const table = document.getElementById('schedule');
 
 	schedule.keys().forEach(key => {
 		var game = schedule.get(key);
 		var row = table.insertRow(-1);
 		row.setAttribute('id', key)
-		var time = row.insertCell(0);
-		var team = row.insertCell(1);
 
-		time.innerHTML = game.time;
-		team.innerHTML = game.team;
+		var time = row.insertCell(0);
+		time.textContent = game.time;
+
+		var team = row.insertCell(1);
+		team.textContent = game.team;
 	});
 }
 
