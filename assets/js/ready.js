@@ -13,6 +13,14 @@ const schedule = new Map([
 	[20250320, { time: '20 Mar, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }]
 ]);
 
+const scrores = [
+	[{ team: 'Kilbirnie Kreamers',    score: 5,   wins: 1, draws: 0, losses: 0 }],
+	[{ team: 'Volley Cojones',        score: 4,   wins: 1, draws: 0, losses: 0 }],
+	[{ team: 'Kiss my Ace',           score: 3.5, wins: 1, draws: 0, losses: 0 }],
+	[{ team: 'Twenty Twenty',         score: 1,   wins: 0, draws: 0, losses: 1 }],
+	[{ team: 'Spike the Stegosaurus', score: 1,   wins: 0, draws: 0, losses: 1 }],
+	[{ team: 'Spatial Needs',         score: 0,   wins: 0, draws: 0, losses: 1 }]
+];
 
 function populateSchedule(){
 	const table = document.getElementById('schedule');
