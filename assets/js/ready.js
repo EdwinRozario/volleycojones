@@ -8,18 +8,18 @@ const schedule = new Map([
 	[20250213, { time: '13 Feb, 6:00 pm', team: 'Kilbernie Kreamers', court: 1, duty: '6:50 pm' }],
 	[20250220, { time: '20 Feb, 6:00 pm', team: 'Spike the Stegosaurus', court: 1, duty: 'NA' }],
 	[20250227, { time: '27 Feb, 6:50 pm', team: 'Kilbirnie Kreamers', court: 1, duty: 'NA' }],
-	[20250306, { time: '06 Mar, 6:00 pm', team: 'Spatial Needs', court: 2, duty: 'NA' }],
+	[20250306, { time: '06 Mar, 6:50 pm', team: 'Dirty Dogs', court: 2, duty: 'NA' }],
 	[20250313, { time: '13 Mar, 8:30 pm', team: 'Twenty Twenty', court: 3, duty: 'NA' }],
 	[20250320, { time: '20 Mar, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }]
 ]);
 
 const scores = [
-	{ team: 'Volley Cojones',        score: 4.5,   wins: 1, draws: 0, losses: 0 },
-	{ team: 'Kilbirnie Kreamers',    score: 9,   wins: 2, draws: 0, losses: 1 },
-	{ team: 'Kiss my Ace',           score: 3.5, wins: 1, draws: 0, losses: 0 },
-	{ team: 'Twenty Twenty',         score: 2.5,   wins: 0, draws: 0, losses: 1 },
-	{ team: 'Spike the Stegosaurus', score: 1,   wins: 0, draws: 0, losses: 2 },
-	{ team: 'Tyrannosaurus',         score: 1,   wins: 0, draws: 0, losses: 2 }
+	{ team: 'Volley Cojones',        score: 4.5,   wins: 1, draws: 0, losses: 1 },
+	{ team: 'Dirty Dogs',            score: 7.5,   wins: 1, draws: 1, losses: 0 },
+	{ team: 'Kilbirnie Kreamers',    score: 9,     wins: 2, draws: 0, losses: 0 },
+	{ team: 'Kiss my Ace',           score: 9,     wins: 1, draws: 0, losses: 0 },
+	{ team: 'Twenty Twenty',         score: 3.5,   wins: 0, draws: 1, losses: 1 },
+	{ team: 'Spike the Stegosaurus', score: 1,     wins: 0, draws: 0, losses: 2 }
 ];
 
 function populateScores() {
