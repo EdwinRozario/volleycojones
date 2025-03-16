@@ -14,12 +14,12 @@ const schedule = new Map([
 ]);
 
 const scores = [
-	{ team: 'Volley Cojones',        score: 10,   wins: 2, draws: 0, losses: 1 },
-	{ team: 'Dirty Dogs',            score: 7.5,  wins: 1, draws: 1, losses: 1 },
-	{ team: 'Kilbirnie Kreamers',    score: 13.5, wins: 3, draws: 0, losses: 0 },
-	{ team: 'Kiss my Ace',           score: 9,    wins: 2, draws: 0, losses: 1 },
-	{ team: 'Twenty Twenty',         score: 4.5,  wins: 0, draws: 1, losses: 2 },
-	{ team: 'Spike the Stegosaurus', score: 4.5,  wins: 1, draws: 0, losses: 2 }
+	{ team: 'Volley Cojones',        score: 11,   wins: 2, draws: 0, losses: 2 },
+	{ team: 'Dirty Dogs',            score: 8.5,  wins: 1, draws: 1, losses: 2 },
+	{ team: 'Kilbirnie Kreamers',    score: 14.5, wins: 3, draws: 0, losses: 1 },
+	{ team: 'Kiss my Ace',           score: 13,   wins: 3, draws: 0, losses: 1 },
+	{ team: 'Twenty Twenty',         score: 8,    wins: 1, draws: 1, losses: 2 },
+	{ team: 'Spike the Stegosaurus', score: 8,    wins: 2, draws: 0, losses: 2 }
 ];
 
 function populateScores() {
