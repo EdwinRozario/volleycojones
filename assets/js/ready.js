@@ -13,7 +13,7 @@ const schedule = new Map([
 	[20250320, { time: '20 Mar, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }],
 	[20250327, { time: '27 Mar, 6:00 pm', team: 'Spike the Stegosaurus', court: 1, duty: '6:50 pm' }],
 	[20250403, { time: '03 Apr, 6:50 pm', team: 'Kilbernie Kreamers', court: 1, duty: 'NA' }],
-	[20250410, { time: '10 Apr, 6:50 pm', team: 'Dirty Dogs', court: 2, duty: 'NA' }],
+	[20250410, { time: '10 Apr, 6:00 pm', team: 'Dirty Dogs', court: 3, duty: 'NA' }],
 	[20250417, { time: '17 Apr, 8:30 pm', team: 'Twenty Twenty ', court: 3, duty: 'NA' }],
 	[20250424, { time: '24 Apr, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }]
 ]);
