@@ -5,26 +5,20 @@ $(document).ready(function(){
 });
 
 const schedule = new Map([
-	[20250213, { time: '13 Feb, 6:00 pm', team: 'Kilbernie Kreamers', court: 1, duty: '6:50 pm' }],
-	[20250220, { time: '20 Feb, 6:00 pm', team: 'Spike the Stegosaurus', court: 1, duty: 'NA' }],
-	[20250227, { time: '27 Feb, 6:50 pm', team: 'Kilbirnie Kreamers', court: 1, duty: 'NA' }],
-	[20250306, { time: '06 Mar, 6:50 pm', team: 'Dirty Dogs', court: 2, duty: 'NA' }],
-	[20250313, { time: '13 Mar, 8:30 pm', team: 'Twenty Twenty', court: 3, duty: 'NA' }],
-	[20250320, { time: '20 Mar, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }],
-	[20250327, { time: '27 Mar, 6:00 pm', team: 'Spike the Stegosaurus', court: 1, duty: '6:50 pm' }],
-	[20250403, { time: '03 Apr, 6:50 pm', team: 'Kilbernie Kreamers', court: 1, duty: 'NA' }],
-	[20250410, { time: '10 Apr, 6:00 pm', team: 'Dirty Dogs', court: 3, duty: 'NA' }],
-	[20250417, { time: '17 Apr, 8:30 pm', team: 'Twenty Twenty ', court: 3, duty: 'NA' }],
-	[20250424, { time: '24 Apr, 6:00 pm', team: 'Kiss my Ace', court: 2, duty: 'NA' }]
+	[20250501, { time: '1 May, 6:00 pm', team: 'Spike the Stegasaurus', court: 2, duty: 'NA' }],
+	[20250508, { time: '8 May, 6:50 pm', team: 'Amy & Co ', court: 2, duty: 'NA' }],
+	[20250515, { time: '15 May, 6:50 pm', team: 'Kiss my Ace', court: 3, duty: 'NA' }],
+	[20250522, { time: '22 May, 6:00 pm', team: 'Team Lang', court: 2, duty: 'NA' }],
+	[20250529, { time: '29 May, 7:40 pm', team: 'Twenty Twenty', court: 1, duty: 'NA' }]
 ]);
 
 const scores = [
-	{ team: 'Volley Cojones',        score: 21.5, wins: 4, draws: 0, losses: 3 },
-	{ team: 'Dirty Dogs',            score: 12,   wins: 1, draws: 2, losses: 4 },
-	{ team: 'Kilbirnie Kreamers',    score: 24.5, wins: 5, draws: 1, losses: 1 },
-	{ team: 'Kiss my Ace',           score: 17.5, wins: 4, draws: 0, losses: 3 },
-	{ team: 'Twenty Twenty',         score: 13,   wins: 1, draws: 3, losses: 3 },
-	{ team: 'Spike the Stegosaurus', score: 18.5, wins: 4, draws: 0, losses: 3 }
+	{ team: 'Volley Cojones',        score: 31.5, wins: 6, draws: 0, losses: 4 },
+	{ team: 'Dirty Dogs',            score: 14,   wins: 1, draws: 2, losses: 7 },
+	{ team: 'Kilbirnie Kreamers',    score: 38.5, wins: 8, draws: 1, losses: 1 },
+	{ team: 'Kiss my Ace',           score: 22,   wins: 5, draws: 0, losses: 5 },
+	{ team: 'Twenty Twenty',         score: 18.5, wins: 2, draws: 3, losses: 5 },
+	{ team: 'Spike the Stegosaurus', score: 29,   wins: 6, draws: 0, losses: 4 }
 ];
 
 function populateScores() {
