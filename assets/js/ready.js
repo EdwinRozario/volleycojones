@@ -5,20 +5,19 @@ $(document).ready(function(){
 });
 
 const schedule = new Map([
-	[20250501, { time: '1 May, 6:00 pm', team: 'Spike the Stegasaurus', court: 2, duty: 'NA' }],
-	[20250508, { time: '8 May, 6:50 pm', team: 'Amy & Co ', court: 2, duty: 'NA' }],
-	[20250515, { time: '15 May, 6:50 pm', team: 'Kiss my Ace', court: 3, duty: 'NA' }],
-	[20250522, { time: '22 May, 6:00 pm', team: 'Team Lang', court: 2, duty: 'NA' }],
-	[20250529, { time: '29 May, 7:40 pm', team: 'Twenty Twenty', court: 1, duty: 'NA' }]
+	[20250612, { time: '12 June, 6:50 pm', team: 'Amy & Co', court: 2, duty: '7:40 pm' }],
+	[20250619, { time: '19 June, 6:50 pm', team: 'Kiss my Ace', court: 3, duty: 'NA' }],
+	[20250626, { time: '26 June, 6:00 pm', team: 'Team Lang', court: 2, duty: 'NA' }],
+	[20250701, { time: '03 June, 7:40 pm', team: 'Twenty Twenty', court: 1, duty: 'NA' }]
 ]);
 
 const scores = [
-	{ team: 'Volley Cojones',        score: 0,   wins: 0, draws: 0, losses: 1 },
-	{ team: 'Team Lang',             score: 5,   wins: 1, draws: 0, losses: 0 },
-	{ team: 'Amy & Co',              score: 4.5, wins: 1, draws: 0, losses: 0 },
-	{ team: 'Kiss my Ace',           score: 0,   wins: 0, draws: 0, losses: 1 },
-	{ team: 'Twenty Twenty',         score: 0.5, wins: 0, draws: 0, losses: 1 },
-	{ team: 'Spike the Stegosaurus', score: 4,   wins: 1, draws: 0, losses: 0 }
+	{ team: 'Volley Cojones',        score: 5.5, wins: 1, draws: 0, losses: 4 },
+	{ team: 'Team Lang',             score: 18,  wins: 4, draws: 0, losses: 1 },
+	{ team: 'Amy & Co',              score: 16,  wins: 4, draws: 0, losses: 1 },
+	{ team: 'Kiss my Ace',           score: 3.5, wins: 0, draws: 0, losses: 5 },
+	{ team: 'Twenty Twenty',         score: 11.5,wins: 3, draws: 0, losses: 2 },
+	{ team: 'Spike the Stegosaurus', score: 14,  wins: 3, draws: 0, losses: 2 }
 ];
 
 function populateScores() {
