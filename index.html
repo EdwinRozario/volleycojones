@@ -1,207 +1,403 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Volley Cojones</title>
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Volley Cojones</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
-	<!-- <link rel="manifest" href="manifest.json"> -->
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon_32x32.png">
-	<link rel="icon" type="image/png" sizes="48x48" href="favicon_48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon_48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon.png">
 
-	<!-- Apple Touch Icon (for iOS home screen) -->
-	<link rel="apple-touch-icon" sizes="180x180" href="icon.png">
-	<!-- Android Chrome Home Screen Icon -->
-	<link rel="icon" type="image/png" sizes="192x192" href="icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding-bottom: 20px;
+        }
 
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-	<link rel="stylesheet" href="assets/css/ready.css">
-	<link rel="stylesheet" href="assets/css/demo.css">
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 20px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #764ba2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .volleyball-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .next-game-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .game-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 18px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .info-card.time {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+        }
+
+        .info-card.team {
+            background: linear-gradient(135deg, #55efc4, #00b894);
+        }
+
+        .info-card.court {
+            background: linear-gradient(135deg, #ff7675, #d63031);
+        }
+
+        .info-card.duty {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+        }
+
+        .info-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(0,0,0,0.6);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .info-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+
+        .info-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            opacity: 0.3;
+        }
+
+        .pdf-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pdf-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .schedule-section, .scoreboard-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: -10px;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+        }
+
+        th {
+            padding: 14px;
+            text-align: left;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        th:first-child {
+            border-radius: 10px 0 0 0;
+        }
+
+        th:last-child {
+            border-radius: 0 10px 0 0;
+            text-align: center;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #f1f3f5;
+            font-size: 15px;
+            color: #495057;
+        }
+
+        td:last-child {
+            text-align: center;
+        }
+
+        tbody tr {
+            transition: background-color 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .score-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .win { color: #00b894; font-weight: 600; }
+        .draw { color: #fdcb6e; font-weight: 600; }
+        .loss { color: #d63031; font-weight: 600; }
+
+        @media (max-width: 380px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .game-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-value {
+                font-size: 16px;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #adb5bd;
+            font-size: 14px;
+        }
+
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+            opacity: 0.3;
+        }
+    </style>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="main-header">
-			<div class="logo-header">
-				<a href="index.html" class="logo">
-					Volley Cojones
-				</a>
-			</div>
-		</div>
+    <div class="header">
+        <h1>
+            <span class="volleyball-icon">🏐</span>
+            Volley Cojones
+        </h1>
+    </div>
 
-			<div class="main-panel">
-				<div class="content">
-					<div class="container-fluid">
-						<div class="row">
+    <div class="container">
+        <!-- Next Game Section -->
+        <div class="next-game-section">
+            <div class="section-title">
+                <span>⚡</span>
+                NEXT GAME
+            </div>
 
-							<!-- Time -->
-							<div class="col-md-3">
-								<div class="card card-stats card-warning">
-									<div class="card-body ">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-clock-o"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Time</p>
-													<h4 id="time" class="card-title">Not Scheduled</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+            <div class="game-info-grid">
+                <div class="info-card time">
+                    <div class="info-label">Time</div>
+                    <div id="time" class="info-value">Not Scheduled</div>
+                    <span class="info-icon">🕐</span>
+                </div>
 
-							<!-- Team -->
-							<div class="col-md-3">
-								<div class="card card-stats card-success">
-									<div class="card-body ">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-soccer-ball-o"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Team</p>
-													<h4 id="team" class="card-title">Not Scheduled</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                <div class="info-card team">
+                    <div class="info-label">Team</div>
+                    <div id="team" class="info-value">Not Scheduled</div>
+                    <span class="info-icon">🏐</span>
+                </div>
 
-							<!-- Court -->
-							<div class="col-md-3">
-								<div class="card card-stats card-danger">
-									<div class="card-body">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-map-marker"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Court</p>
-													<h4 id="court" class="card-title">Not Scheduled</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                <div class="info-card court">
+                    <div class="info-label">Court</div>
+                    <div id="court" class="info-value">Not Scheduled</div>
+                    <span class="info-icon">📍</span>
+                </div>
 
-							<!-- Duty -->
-							<div class="col-md-3">
-								<div class="card card-stats card-primary">
-									<div class="card-body ">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-binoculars"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Duty</p>
-													<h4 id="duty" class="card-title">Not Scheduled</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                <div class="info-card duty">
+                    <div class="info-label">Duty</div>
+                    <div id="duty" class="info-value">Not Scheduled</div>
+                    <span class="info-icon">👀</span>
+                </div>
+            </div>
 
-							<!-- PDF -->
-							<div class="col-md-3">
-								<div class="card card-stats card-primary">
-									<div class="card-body ">
-										<a href="https://volleyball.co.nz/wp-content/uploads/2025/04/Thursday-Term-2-Week-1-5.pdf" target="_blank" rel="noopener noreferrer">
-											<div class="row">
-												<div class="col-5">
-													<div class="icon-big text-center">
-														<i class="la la-external-link-square"></i>
-													</div>
-												</div>
-												<div class="col-7 d-flex align-items-center">
-													<div class="numbers">
-														<p class="card-category">Schedule PDF</p>
-														<h4 id="pdf" class="card-title">
-															Time sheet
-														</h4>
-													</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
+            <a href="https://volleyball.co.nz/wp-content/uploads/2025/04/Thursday-Term-2-Week-1-5.pdf" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="pdf-link">
+                <span>📄</span>
+                <span id="pdf">View Full Schedule</span>
+            </a>
+        </div>
 
-							<!-- Schedule table -->
-							<div class="card-body">
-								<div class="icon-big">
-									<strong>Schedule</strong>
-									<i class="la la-calendar"></i>
-								</div>
+        <!-- Schedule Section -->
+        <div class="schedule-section">
+            <div class="section-title">
+                <span>📅</span>
+                SCHEDULE
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Team</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule">
+                        <tr>
+                            <td colspan="2" class="empty-state">
+                                <div class="empty-icon">📋</div>
+                                No games scheduled
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-								<table class="table table-head-bg-default table-hover">
-									<thead>
-										<tr>
-											<th scope="col">Time</th>
-											<th scope="col">Team</th>
-										</tr>
-									</thead>
-									<tbody id="schedule"></tbody>
-								</table>
-							</div>
+				<!-- Scoreboard Section -->
+        <div class="scoreboard-section">
+            <div class="section-title">
+                <span>🏆</span>
+                SCOREBOARD
+            </div>
+            <div class="table-container">
+                <table id="scoreboard">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Score</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scores">
+                        <tr>
+                            <td colspan="5" class="empty-state">
+                                <div class="empty-icon">🏅</div>
+                                No scores available
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-							<!-- Scoreboard table -->
-							<div class="card-body">
-								<div class="icon-big">
-									<strong>Score board</strong>
-									<i class="la la-trophy"></i>
-								</div>
-
-								<table id="scoreboard" class="table table-head-bg-default table-hover">
-									<thead>
-										<tr>
-											<th scope="col">Team</th>
-											<th scope="col">Score</th>
-											<th scope="col">W</th>
-											<th scope="col">D</th>
-											<th scope="col">L</th>
-										</tr>
-									</thead>
-									<tbody id="scores"></tbody>
-
-										<!-- <tr>
-											<td>Amy & Co</td>
-											<td>33</td>
-											<td>7</td>
-											<td>0</td>
-											<td>3</td>
-										</tr> -->
-
-								</table>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // Add any custom JavaScript here
+        // The existing IDs are preserved for compatibility
+    </script>
 </body>
-
-<script src="assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="assets/js/ready.js"></script>
-
 </html>
