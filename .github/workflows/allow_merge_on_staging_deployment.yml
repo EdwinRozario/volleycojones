@@ -1,0 +1,20 @@
+name: Staging deployment check
+
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled, synchronize]
+
+jobs:
+  prevent_merge:
+    name: Prevent Merge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for doc label
+        run: |
+          DEPLOYED=${{ contains(github.event.pull_request.labels.*.name, 'documentation') }}
+          echo $DEPLOYED
+          if [[ $DEPLOYED = true ]]; then
+            exit 0
+          else
+            exit 1
+          fi
